@@ -1,0 +1,180 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
+<title><?php echo $this->getTitle() ?></title>
+<meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
+<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = '<?php echo $this->helper('core/js')->getJsUrl('blank.html') ?>';
+    var BLANK_IMG = '<?php echo $this->helper('core/js')->getJsUrl('spacer.gif') ?>';
+//]]>
+</script>
+<![endif]-->
+<?php echo $this->getCssJsHtml() ?>
+<?php echo $this->getChildHtml() ?>
+<?php echo $this->helper('core/js')->getTranslatorScript() ?>
+<?php echo $this->getIncludes() ?>
+<link rel="stylesheet" type="text/css" href="/ag.css" media="all" />
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+// Austin's Code
+$.noConflict();
+jQuery(document).ready(function($) {
+  
+  $('.col-right').append('<div class="agextra"><Strong>Please Note<br></strong>We currently do NOT ship to addresses outside of the continental United States.</div>');
+  
+  $("#payment-buttons-container button").click(function() {
+   var dataString2 = $('#cinfo').val();
+   var dataString = 'orderdetails='+ dataString2;
+	
+	  $.ajax({
+ 	  type: "POST",
+ 	  url: "/side.php",
+ 	  data: dataString,
+  	  success: function() {
+    		
+ 		 }
+	});
+	   // alert("YES!");
+	});  
+	
+	  $('.cartdrop').mouseenter(function() {
+		if($('#cart-content').is(':hidden')){
+        	
+			if(!$.trim( $('.agitems').html() ).length){
+				
+			}else{
+			$('#cart-content').slideDown('slow');
+			setTimeout(function(){disap()},10000);	
+			}
+		}
+	});
+	
+	$('#cart-content').mouseleave(function() {
+        $('#cart-content').slideUp('slow');
+    });
+	
+	function disap() {
+		if($('#cart-content').is(':visible')){
+				if($('#cart-content').is(':hover')){
+					
+				}else{
+					$('#cart-content').slideUp('slow');
+					
+				}
+			}
+		}
+
+var aurl      = window.location.href;  
+if (aurl.toLowerCase().indexOf("chocolates.html") >= 0){
+
+$('*.actions button').css('display','none');
+	
+}
+
+
+// Product Options Check  ----------------------------
+if ($(".product-custom-option").length > 1) {
+	
+	$('.product-options dd input.input-text').css('width','50%');
+	$('.product-options dd input.input-text').parent().append('Enter Quantity');
+	$('.add-to-cart button').attr('onclick','');
+
+var aurl      = window.location.href;  
+var selection = 10;
+var selec = "color";
+		if (aurl.toLowerCase().indexOf("cc00312") >= 0){
+		selection = 12;
+		}
+		if (aurl.toLowerCase().indexOf("cc00507") >= 0){
+		selection = 7;
+		}
+		if (aurl.toLowerCase().indexOf("cc00709") >= 0){
+		selection = 9;
+		}
+		if (aurl.toLowerCase().indexOf("cc00906") >= 0){
+		selection = 6;
+		}
+		if (aurl.toLowerCase().indexOf("cc01006") >= 0){
+		selection = 6;
+		}
+		if (aurl.toLowerCase().indexOf("ce000") >= 0){
+		selection = 4;
+		selec = "chocolate";
+		}
+		if (aurl.toLowerCase().indexOf("199560") >= 0){
+		selection = 4;
+		selec = "flavors";
+		}
+		
+function runcheck(){
+var agcheck = 0;
+		$('.product-custom-option').each(function() {
+			newval =  $(this).val();	
+			newval = parseInt(newval);
+			if($.isNumeric(newval)){
+   		 		agcheck = agcheck + newval;
+			}
+		});
+		
+		if(agcheck!=selection || agcheck=="" || !$.isNumeric(agcheck)){
+			alert("Please make sure your "+selec+" selections equal "+selection+" items.");
+			return false;
+		}else{
+			//alert(agcheck);
+			productAddToCartForm.submit(this);
+		}	
+	
+}
+
+
+	$('.add-to-cart button').click(function() {
+			runcheck();
+	
+    });
+
+
+
+
+	
+} // END product option check   --------------------------
+
+
+
+
+});
+
+
+/*commented out for local testing - is this needed?*/
+/*if (window.location.protocol != "https:")
+    window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);*/
+</script>

@@ -1,0 +1,63 @@
+<?php
+/**
+ * Intenso Premium Theme - pregelmaster customizations
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014-2016 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+/**
+ * @var Mage_Page_Block_Html_Topdrawerlinks $this
+ */
+?>
+<?php $themeHelper = Mage::helper('itactica_intenso'); ?>
+<?php $isStoreSwitchEnabled = $themeHelper->storeSwitcher(); ?>
+
+<div id="pglogo2" class="show-for-large-up">
+ <a href="https://pregelcanada.com">
+   <img class="main-logo" src="https://products.pregel2.com/skin/frontend/intenso/pregelmaster/images/pregel-logo.svg" alt="Pregel" title="Pregel">
+ </a>
+</div>
+
+<div id="pg-top-bar" class="top-bar show-for-large-up">
+  <div class="row top-bar-section">
+    <!-- <div class="large-2 columns show-for-large-up">
+      <?php //echo $this->getChildHtml('currency_selector') ?>
+      <?php //echo $this->getChildHtml('store_language') ?>
+      <?php if ($isStoreSwitchEnabled) //echo $this->getChildHtml('store_switcher') ?>
+    </div> -->
+    <div class="large-6 columns">
+      <ul class="more-links">
+        <li class="menu-item"><a href="https://benelux.pregel2.com/locations/">Locations</a></li>
+        <li class="menu-item"><a href="https://benelux.pregel2.com/news/">News</a></li>
+        <li class="menu-item"><a href="https://benelux.pregel2.com/events/">Events</a></li>
+        <li class="menu-item"><a href="http://pregelrecipes.com">Recipes</a></li>
+        <li class="menu-item has-dropdown custom-dropdown vertical-menu-link"><a href="https://benelux.pregel2.com/resources/">Resources</a>
+            <ul class="dropdown arrow-box">
+              <li class="menu-item"><a href="https://benelux.pregel2.com/resources/videos/">Videos</a></li>
+              <li class="menu-item"><a href="https://benelux.pregel2.com/pmag">P Magazine</a></li>
+              <li class="menu-item"><a href="https://benelux.pregel2.com/resources/downloads/">Collateral Downloads</a></li>
+              <li class="menu-item"><a href="http://pregelmarketplace.com">Image Downloads</a></li>
+            </ul>
+        </li>
+        <!-- <li class="menu-item menu-item-1555"><a href="https://products.canada.pregel2.com/enpga/products/filter/allowed_to_ordermode/1.html">Shop Online!</a></li> -->
+      </ul> 
+    </div>
+
+    <div class="large-4 columns">
+     <?php //echo $this->getChildHtml('topmgCart') ?>
+   </div>
+   <div class="large-2 columns show-for-large-up">
+    <?php $catalogSearchHelper =  $this->helper('catalogsearch'); ?>
+    <form method="get" action="<?php echo $catalogSearchHelper->getResultUrl() ?>" id="search_mini_form">
+      <div class="form-search">
+        <div class="action">
+          <button class="button" title="Search" type="submit"><span aria-hidden="true" class="icon-search"></span></button>                   
+        </div>
+        <?php echo $this->getChildHtml('topSearch') ?>    
+      </div>
+    </form>
+  </div>
+</div>
+</div>

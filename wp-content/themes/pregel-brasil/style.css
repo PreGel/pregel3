@@ -1,0 +1,154 @@
+
+/*
+Theme Name: PreGel Brasil
+Description: Child theme for Brasil - Parent PreGel Master
+Author: PreGel America
+Template: pregel
+*/
+.admin-bar #pglogo2 {
+	top:40px;
+}
+
+.top-bar {
+	padding: 3rem;
+}
+.top-bar.sticky.is-stuck {
+	padding: 0.5rem;
+}
+
+
+@media (max-width: 1024px) {
+	.top-bar {
+		padding: 0.5rem;
+	}
+}
+#menu-main-left-1 {
+	padding-left: 6rem;
+}
+.nav-table {
+	display: table;
+}
+.nav-table-row {
+	display: table-row;
+}
+.nav-table ul li {
+	display: table-cell;
+}
+#pglogo2 {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 192px;
+    z-index: 1006;
+    background: white;
+    border: solid 2px #6ba0d3;
+    padding: 14px 30px 10px;
+    border-radius: 4px;
+ }
+ #top-bar-menu a {
+ 	font-size: 1.2rem;
+ }
+ 
+#menu-main-right-1 .menu-item-1703 a {
+	font-size: 1.25rem;
+}
+
+#product-bar .link {
+    position: relative;
+    height: 170px;
+}
+#product-bar .pastry h3 {
+	margin-top: -20px;
+}
+/* custom css */
+#product-bar .pastry h3 {
+     margin-top: 0px; 
+}
+.page-id-19 #pg-about-banner {
+    background-image: url(assets/images/SERVICES_CUSTOMERSUPPORT_HeaderISO.png);
+}
+.page-id-20 #pg-about-banner {
+    background-image: url(assets/images/SUBSIDIARIES_HeaderISO.png);
+}
+.page-id-123 #pg-about-banner {
+    background-image: url(assets/images/ABOUT_main_HeaderISO.png);
+}
+.page-id-405 .parrallax {
+	background-image: url(assets/images/PGCA-Office.jpg);
+}
+.page-id-1697 #pg-about-banner {
+    background-image: url(assets/images/ABOUT_main_HeaderISO.png);
+}
+.page-id-1703 #pg-about-banner {
+    background-image: url(assets/images/ABOUTUS_AroundWorld_HeaderISO.png);
+}
+.page-id-1706 #pg-about-banner {
+    background-image: url(assets/images/ABOUT_main_HeaderISO.png);
+}
+.page-id-1709 #pg-about-banner {
+    background-image: url(assets/images/ABOUTUS_ProductManufacturing_Header_iso.png);
+}
+.page-id-1713 #pg-about-banner {
+    background-image: url(assets/images/TRAINING_HeaderISO.png);
+}
+.page-id-1713 #pg-about-section-two {
+    display: none;
+}
+.page-id-1718 #pg-about-banner {
+    background-image: url(assets/images/EVENTS_EventsPage_Header_iso.png);
+}
+.page-id-1722  #pg-about-banner {
+    background-image: url(assets/images/SERVICES_PrivateLabel_Header_iso.png);
+}
+.page-id-1724 #pg-about-banner {
+    background-image: url(assets/images/SERVICES_ResearchDevelopment_Header_iso.png);
+}
+.page-id-1726 #pg-about-banner {
+	background-image: url(assets/images/oldSERVICES_CUSTOMERSUPPORT_HeaderISO.png);
+}
+.page-id-1730 #pg-about-banner {
+    background-image: url(assets/images/ABOUTUS_AroundWorld_HeaderISO.png);
+}
+.page-id-1763 #pg-about-banner-container {
+	display: none;
+} 
+.page-id-1765 #pg-about-banner-container {
+	display: none;
+} 
+#pg-testimonial-container {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    border: #6ba0d3 solid 2px;  
+}
+.pg-circle-image  {
+    display: inline;
+    margin: 0 auto;
+    height: auto;
+    width: auto;                    
+}
+/*News section*/
+.search-form input {
+	width: inherit;
+	display: inline-block;
+}
+#event-cat-list li {
+	display: inline-block;
+}
+#event-cat-list ul {
+	float:left;
+}
+#cat-filter {
+	background:#efefef;
+}
+#cat-filter h4 {
+	padding: 10px;
+}

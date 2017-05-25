@@ -1,0 +1,273 @@
+
+/*
+Theme Name: PreGel France
+Description: Child theme for France - Parent PreGel Master
+Author: PreGel America
+Template: pregel
+*/
+
+/* custom css */
+
+.ms-parent-id-2 {
+    background: linear-gradient(235deg, #d8a726, #f7ebb1, #d8a726, #f7ebb1);
+	background-size: 800% 800%;
+
+	-webkit-animation: AnimationName 30s ease infinite;
+	-moz-animation: AnimationName 30s ease infinite;
+	animation: AnimationName 30s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+/*temporary - push 2 line nav text up until new nav impl*/
+/*.split-right ul li a {
+    margin-top: -10px;
+}*/
+#top-bar-menu a {
+    white-space: nowrap;
+}
+
+
+
+#location-links .row {
+    border-bottom: 2px solid #efefef;
+    margin-top: 10px;
+}
+
+.page-id-25 .parrallax {
+    background-image: url('assets/images/ITC-Parrallax.jpg');
+}
+#pg-about-banner {
+    background-size: auto;
+}
+#pg-about-banner-container {
+    background: url('assets/images/WhiteBackground.jpg');
+    background-repeat: repeat-x;
+    background-position: center center;
+    /*background-size: cover;*/
+}
+#widget_sp_image-5 .pg-caption .pg-text-overlay img {
+    /*width: 200px;
+    max-width: 200px;
+    min-width: 200px;*/
+    width: 30%;
+    max-width: 30%;
+    min-width: 30%;
+    height: auto;
+}
+#product-bar .link {
+    position: relative;
+}
+#product-bar .link.froyo span {
+    font-size: 1.5rem;
+    line-height: 1rem;
+    vertical-align: top;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-family: "futura-pt", sans-serif;
+    position: absolute;
+    top:30%;
+}
+
+#product-bar .link.froyo h3 {
+        /*line-height: 1rem;*/
+}
+#product-bar .link.froyo:hover span {
+    color: #fff;
+}
+#product-bar .link.froyo {
+    padding: 4% 0 4% 4%;
+    /*margin-bottom: -1rem;*/
+}
+#product-bar .link.froyo h3 {
+    vertical-align: top;
+}
+
+@media (max-width: 1440px) {
+    #product-bar .link.froyo span {
+    font-size:1rem;
+}
+}
+@media (max-width: 1024px) {
+    #product-bar .link.froyo span {
+    top:20%;
+}
+}
+
+/*@media (min-width: 530px) and (max-width: 1024px) {
+    #product-bar .link.froyo span {
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+    #product-bar .link.froyo h3 {
+        line-height: 1rem;
+    }
+    #product-bar .link.froyo {
+    padding: 4% 0 4% 4%;
+    }
+}
+
+@media (min-width: 1025px) and (max-width: 1999px) {
+    #product-bar .link.froyo span {
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+    }
+    #product-bar .link.froyo h3 {
+        line-height: 1.7rem;
+    }
+}
+
+@media (min-width: 1280px) and (max-width: 1440px) {
+    #product-bar .link.froyo span {
+        font-size: 1.2rem;
+        line-height: 1.7rem;
+    }
+}
+@media (min-width: 1441px) and (max-width: 1999px) {
+    #product-bar .link.froyo span {
+        font-size: 1.3rem;
+        line-height: 2rem;
+    }
+}
+
+@media (min-width: 2000px) {
+    #product-bar .link.froyo span {
+        font-size: 2rem;
+        line-height: 2rem;
+    }
+    #product-bar .link.froyo h3 {
+        line-height: 3rem;
+
+    }
+    #product-bar .link.froyo {
+        padding: 4% 0 4% 4%;
+    }
+ }*/
+ ul#menu-secondary-top-bar li {
+    margin-right: 10px;
+    display: inline-block;
+ }
+
+ ul#menu-secondary-top-bar li a {
+    font-weight: bold;
+    border: 1px solid #fff;
+ }
+
+.search-field {
+    /*float: left;*/
+    display: inline-block;
+    height: 36px;
+}
+#search-4 .search-field {
+    max-width: 80%;
+}
+.search-submit {
+    /*float: left;*/
+    display: inline-block;
+    height: 36px;
+    margin: 0;
+}
+.pg-text-overlay img {
+    min-width: 0;
+}
+#search-3 h4.widgettitle {
+    float: left;
+}
+
+
+
+.page-template-template-events #pg-about-banner {
+    background-image: url('assets/images/EVENTS_EventsPagev2_Header_iso.png');
+}
+
+
+.page-template-template-about-main .parrallax {
+    background-image: url('/wp-content/themes/pregel-hungary/assets/images/PreGel-Italy.jpg');
+} 
+.page-template-template-about-main #pg-about-banner {
+    /*background-image: url('assets/images/ABOUT_main_Header2050x550.jpg');*/
+    background-image: url('assets/images/ABOUT_main_HeaderISO.png');
+}
+
+.page-template-template-video-playlist #pg-about-banner {
+    /*background-image: url('assets/images/ABOUT_main_Header2050x550.jpg');*/
+    background-image: url('assets/images/header-video.png');
+}
+
+.page-id-1690 #pg-about-banner {
+    /*background-image: url('assets/images/ABOUTUS_AroundWorld_Header2050x550.jpg');*/
+    background-image: url('assets/images/ABOUTUS_AroundWorld_HeaderISO.png');
+}
+.page-id-1692 #pg-about-banner {
+    /*background-image: url('assets/images/TRAINING_Header2050x550.jpg');*/
+    background-image: url('assets/images/TRAINING_HeaderISO.png');
+}
+.page-id-1694 #pg-about-banner {
+    /*background-image: url('assets/images/TRAINING_Header2050x550.jpg');*/
+    background-image: url('assets/images/SERVICES_CUSTOMERSUPPORT_HeaderISO.png');
+}
+.page-id-1746 #pg-about-banner {
+    /*background-image: url('assets/images/TRAINING_Header2050x550.jpg');*/
+    background-image: url('assets/images/SUBSIDIARIES_HeaderISO.png');
+}
+#pg-about-testimonial {
+    min-height: 275px;
+}
+.pg-testimonial-container {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        overflow: hidden;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        border-radius: 50%;
+        border: $pregel-blue solid 2px;
+}
+.pg-circle-image  {
+            display: inline;
+            margin: 0 auto;
+            height: auto;
+            width: auto;                    
+}
+
+#bottom-footer #footer-contact-info {
+    font-weight: 700;
+}
+#bottom-footer #copyright {
+    font-weight: 700;
+    }
+
+/*Home page slider*/
+.slide-head h2 {
+    text-shadow: 0px 4px 11px rgba(0, 0, 0, 0.55);
+}
+@media only screen and (max-width: 64em){
+.slide-head h2 {
+    font-size: 36px;
+    text-shadow: 0px 4px 11px rgba(0, 0, 0, 0.55);
+}
+}
+ul.footer-social li {
+    padding: 0 10px;
+}
+#bottom-footer a {
+    color: #fff;
+    text-decoration: underline;
+}

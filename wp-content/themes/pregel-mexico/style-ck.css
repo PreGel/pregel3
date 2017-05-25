@@ -1,0 +1,13 @@
+/*
+Theme Name: PreGel Mexico
+Description: Child theme for Mexico - Parent PreGel Master
+Author: PreGel America
+Template: pregel
+*/
+/* custom css */
+#product-bar .link {
+  position: relative;
+  height: 175px; }
+
+.page-id-1534 #pg-about-banner-container {
+  height: 500px; }

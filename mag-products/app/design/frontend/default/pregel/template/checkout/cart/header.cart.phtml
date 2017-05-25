@@ -1,0 +1,78 @@
+<script src="<?php echo $this->getSkinUrl('js/dropdown.js') ?>" type="text/javascript"></script>
+<?php $_cartQty = $this->getSummaryCount() ?>
+<div class="box header-cart" id="header-cart">
+    <div class="head" >
+        
+        
+        <div class="head atoplinks">
+    <span><a href="/customer/account/"><img src="/images/account.png" style="margin-top:-3px"> MY ACCOUNT</a> </span>
+
+
+    <!-- add a logout link -->
+    <?php if (Mage::helper('customer')->isLoggedIn() ): ?>
+    <span class="log-out-link">
+            <a href="<?php echo Mage::helper('customer')->getLogoutUrl(); ?>"><?php echo 'LOG OUT'; ?></a>
+    </span>
+
+        <?php 
+    /*
+    else: ?>
+            <a href="<?php echo Mage::helper('customer')->getLoginUrl(); ?>">SIGN IN</a>
+        <?php 
+    */
+    endif; ?>
+       
+                 <span><a class="cartdrop" href="/checkout/cart/"><img src="/images/cart.png" style="margin-top:-3px">
+                            <?php if ($_cartQty>0): ?>
+            <?php if ($_cartQty==1): ?>
+                <?php echo "<span class='agitems'>(1)</span>"; ?>
+            <?php else: ?>
+                <?php echo $this->__('<span class="agitems">(%s)</span>', $_cartQty) ?>
+            <?php endif ?>
+        <?php else: ?>
+            <?php echo ''; ?>  
+        <?php endif ?> MY CART <?php if ($_cartQty>=1){ ?><img src="/images/drop.png">  <?php } ?>                </a>
+        </span>         
+    </div>
+        
+        
+        
+        <script>
+		
+		</script>
+        
+      
+      
+             
+    </div>
+
+    <div class="content" id="cart-content" style="display: none;" >
+    <div style="text-align:center; margin-top:-8px;">
+     <img src="/images/upa.png" style=" margin-top:-8px;">
+     </div>
+        <?php $_items = $this->getItems() ?>
+        <?php if(count($_items)): ?>
+        <h4 style="color:#005284; font-weight:normal; font-size:16px; padding-bottom:10px;"><?php echo $this->__('Cart Subtotal:') ?> <?php echo Mage::helper('checkout')->formatPrice($this->getSubtotal()) ?></h4>
+        <?php if ($_subtotalInclTax = $this->getSubtotalInclTax()): ?>
+            <br/>(<b><?php echo Mage::helper('checkout')->formatPrice($_subtotalInclTax) ?></b> <?php echo Mage::helper('tax')->getIncExcText(true) ?>)
+        <?php endif; ?>
+        <ol>
+        <?php foreach($_items as $_item): ?>
+            <?php echo $this->getItemHtml($_item) ?>
+        <?php endforeach; ?>
+        </ol>
+        <script type="text/javascript">decorateList('cart-sidebar', 'non-recursive')</script>
+        <?php endif ?>
+        
+        <?php if($_cartQty && $this->isPossibleOnepageCheckout()): ?>
+        <div class="actions" id="center-buttons">
+            <a class="form-button-header agcheckout" type="button" onclick="setLocation('<?php echo $this->getUrl('checkout/cart') ?>')">
+                <span><?php echo $this->__('Checkout') ?></span>
+            </a>
+            <a class="form-button-alt-header" type="button" style="display:none;" onclick="setLocation('<?php echo  $this->getUrl('checkout/cart') ?>')">
+                <span><?php echo $this->__('View cart') ?></span>
+            </a>
+        </div>
+        <?php endif ?>
+    </div>
+</div>

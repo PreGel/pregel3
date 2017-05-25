@@ -1,0 +1,216 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Shopping cart template
+ *
+ * @see Mage_Checkout_Block_Cart
+ */
+?>
+<div class="cart">
+    <div class="page-title title-buttons">
+        <h1><?php echo $this->__('Shopping Cart') ?></h1>
+
+        <?php if(!$this->hasError()): ?>
+        <?php 
+
+        // this checks if it is a downloadable product first, limits to 40 if so, unlimited quantity for physical products
+        if($this->getQuote()->isVirtual()) {
+            $total = $this->helper('checkout/cart')->getSummaryCount();
+        } else {
+            $total = 0;
+        };
+
+        //$total = $this->helper('checkout/cart')->getSummaryCount();
+		$totalp = $this->helper('checkout/cart')->getQuote()->getGrandTotal();
+        if($total<=40 && $totalp<20000){ ?>
+
+        <ul class="checkout-types">
+        <?php foreach ($this->getMethods('top_methods') as $method): ?>
+            <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+            <li><?php echo $methodHtml; ?></li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        </ul>
+         <?php } ?>
+        <?php endif; ?>
+        
+    </div>
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+    <?php echo $this->getChildHtml('form_before') ?>
+    <form action="<?php echo $this->getUrl('checkout/cart/updatePost') ?>" method="post">
+        <fieldset>
+            <table id="shopping-cart-table" class="data-table cart-table">
+                <col width="1" />
+                <col />
+                <col width="1" />
+            <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+                <col width="1" />
+            <?php endif ?>
+            <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                <col width="1" />
+            <?php endif; ?>
+            <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                <col width="1" />
+            <?php endif; ?>
+                <col width="1" />
+            <?php if ($this->helper('tax')->displayCartPriceExclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                <col width="1" />
+            <?php endif; ?>
+            <?php if ($this->helper('tax')->displayCartPriceInclTax() || $this->helper('tax')->displayCartBothPrices()): ?>
+                <col width="1" />
+            <?php endif; ?>
+                <col width="1" />
+
+            <?php $mergedCells = ($this->helper('tax')->displayCartBothPrices() ? 2 : 1); ?>
+                <thead>
+                    <tr>
+                        <th rowspan="<?php echo $mergedCells; ?>">&nbsp;</th>
+                        <th rowspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Product Name') ?></span></th>
+                        <th rowspan="<?php echo $mergedCells; ?>"></th>
+                        <?php if ($this->helper('wishlist')->isAllowInCart()) : ?>
+                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><span class="nobr"><?php echo $this->__('Move to Wishlist') ?></span></th>
+                        <?php endif ?>
+                        <th class="a-center" colspan="<?php echo $mergedCells; ?>"><span class="nobr"><?php echo $this->__('Unit Price') ?></span></th>
+                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center"><?php echo $this->__('Qty') ?></th>
+                        <th class="a-center" colspan="<?php echo $mergedCells; ?>"><?php echo $this->__('Subtotal') ?></th>
+                        <th rowspan="<?php echo $mergedCells; ?>" class="a-center">&nbsp;</th>
+                    </tr>
+                    <?php if ($this->helper('tax')->displayCartBothPrices()): ?>
+                    <tr>
+                        <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                        <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                        <th class="a-right"><?php echo $this->helper('tax')->getIncExcTaxLabel(false) ?></th>
+                        <th><?php echo $this->helper('tax')->getIncExcTaxLabel(true) ?></th>
+                    </tr>
+                    <?php endif; ?>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="50" class="a-right">
+                            <?php if($this->getContinueShoppingUrl()): ?>
+                                <button type="button" title="<?php echo $this->__('Continue Shopping') ?>" onclick="setLocation('<?php echo $this->getContinueShoppingUrl() ?>')"><?php echo $this->__('Continue Shopping') ?></button>
+                            <?php endif; ?>
+                            <button type="submit" title="<?php echo $this->__('Update Shopping Cart') ?>" ><?php echo $this->__('Update Shopping Cart') ?></button>
+                        </td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                <?php foreach($this->getItems() as $_item): ?>
+                    <?php echo $this->getItemHtml($_item) ?>
+                <?php endforeach ?>
+                </tbody>
+            </table>
+            <script type="text/javascript">decorateTable('shopping-cart-table')</script>
+        </fieldset>
+    </form>
+    <div class="cart-collaterals">
+        <div class="col2-set">
+            <div class="col-1">
+                <?php echo $this->getChildHtml('crosssell') ?>
+            </div>
+            <div class="col-2">
+                <?php echo $this->getChildHtml('coupon') ?>
+                <?php if (!$this->getIsVirtual()): echo $this->getChildHtml('shipping'); endif; ?>
+            </div>
+        </div>
+        <div class="totals">
+        
+        <?php 
+       // this checks if it is a downloadable product first, limits to 40 if so, unlimited quantity for physical products
+
+        if($this->getQuote()->isVirtual()) {
+            $total = $this->helper('checkout/cart')->getSummaryCount();
+        } else {
+            $total = 0;
+        };
+
+
+        //$total = $this->helper('checkout/cart')->getSummaryCount();
+		$totalp = $this->helper('checkout/cart')->getQuote()->getGrandTotal();
+ if($total>=40 || $totalp>=20000.00){ ?>
+<?  if($totalp>=20000.00){ ?>
+<p style="padding:10px;">You have exceeded the maximum cart total of $20000.00.<br />
+<br />
+ <a href="/checkout/cart/">For large orders, please call us at: 866.977.3435.</a></p>
+<? } else { ?>
+<p style="padding:10px;">You have exceeded the maximum amount of items (40).<br />
+<br />
+ <a href="/checkout/cart/">Please visit your cart here to remove items.</a></p>
+ <? } ?>
+ <?php } else { ?>
+            <?php echo $this->getChildHtml('totals'); ?>
+            <?php if(!$this->hasError()): ?>
+            <ul class="checkout-types">
+            <?php foreach ($this->getMethods('methods') as $method): ?>
+                <?php if ($methodHtml = $this->getMethodHtml($method)): ?>
+                <li><?php echo $methodHtml; ?></li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            </ul>
+            <?php endif; ?>
+        <? } ?>    
+        </div>
+    </div>
+<div id="agdisclaimers">
+<h3> Disclaimers: </h3>
+  <ul style="font-size:11px;">
+    <li>You have the right to cancel your order for a full refund at any time prior to your order being processed for shipping. Once the order has been processed you must follow our return policy. If you wish to cancel your order before it processes, we encourage you to call us toll-free at 1-866-977-3435.<br />
+    </li>
+    <li>Orders can be placed on our website 24 hours a day, 7 days a week, but orders will only be shipped out during standard business hours 8:00a.m.-5:00p.m. EST Monday-Friday, excluding scheduled business and holiday closings.<br />
+    </li>
+    <li>Orders placed Monday-Friday before 2:00p.m. EST will ship out same business day.<br />
+    </li>
+    <li>We currently do NOT ship to addresses outside of the continental United States.<br />
+    </li>
+    <li>If you are a current PreGel customer, please contact your Sales Representative or Key Account Specialist to place your order, no discounts will be given online.<br />
+    </li>
+    <li>A product and an image cannot be ordered at the same time. If you wish to place an image download and buy a product you must place two separate orders.<br />
+    </li>
+    <li>If you come across a product you want that is out of stock, please contact us toll-free at 1-866-977-3435 or email us at <a href="mailto:support@pregelmarketplace.com">support@pregelmarketplace.com</a> and we will let you know when we expect the item back in stock.<br />
+    </li>
+    <li>Our eCommerce system will only allow for purchases that can be sent standard UPS shipping. If your order amount exceeds those limits, you will need to contact us directly to arrange an LTL shipment. Any orders that is less than 7 cases or less than 150 lbs. per package can ship UPS, all other orders must be shipped LTL. Please call us toll-free at 1-866-977-3435 to arrange an LTL shipment.</li>
+  </ul>
+</div>
+</div>
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ <script>
+$.noConflict();
+jQuery( document ).ready(function( $ ) {
+	var download = false;
+	var product = false;
+	$(".checkproducts").each(function(aclass) {
+	if($(this).html()=="download"){download = true; };
+	if($(this).html()=="product"){product = true; };	
+	});
+	
+	if (download && product) {
+	$('.cart-collaterals').html("<br><h1 style='text-align:center;'>Please remove either your image downloads, or your service products. <br>We are unnable to process orders containing both types of items at this time.</h1>");
+	$('.checkout-types').html("");	
+	}
+});
+</script>

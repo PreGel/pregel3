@@ -1,0 +1,78 @@
+<?php
+/**
+ * Intenso Premium Theme
+ * 
+ * @category    Itactica
+ * @package     Itactica_Intenso
+ * @copyright   Copyright (c) 2014-2016 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Top menu for wordpress
+ *
+ * @see Mage_Page_Block_Html_Topmenu
+ */
+?>
+    <?php
+        $obj = new Mage_Catalog_Block_Navigation();
+        $storeCategories = $obj->getStoreCategories();
+        Mage::registry('current_category') ? $currentCategoryId = Mage::registry('current_category')->getId() : $currentCategoryId='';
+        foreach ($storeCategories as $_category):
+    ?>
+            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-181 has-submenu is-dropdown-submenu-parent is-down-arrow">
+               <!--  <?php //echo '<a href="' . $_category->getUrl() . '">' ?><strong><?php //echo $_category->getName(); ?></strong></a> -->
+                <a href="https://produkty.pregel.pl/pl-pgpl/produkty.html"><?php echo $_category->getName(); ?></a>
+                <?php $categoryChildren = $_category->getChildren(); ?>
+                <?php if($categoryChildren->count()) : ?>
+                    <ul class="arrow-box menu submenu is-dropdown-submenu first-sub vertical" data-submenu="" >
+ 
+                        <?php foreach($categoryChildren as $_categoryChild) : ?>
+                            <?php $_categoryChildModel = Mage::getModel('catalog/category')->load($_categoryChild->getId());?>
+                            <?php $categoryGrandchildren=$_categoryChild->getChildren(); ?>
+                             <?php //if ($_category->getId()==217): ?>
+                            <!-- <li class="cat-test menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children is-submenu-item is-dropdown-submenu-item is-right-arrow opens-right" > -->
+                            <?php //else: ?>
+                             <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children is-submenu-item is-dropdown-submenu-item is-right-arrow opens-right" >
+                             <?php //endif; ?>
+                                <?php
+                                    $currentCategoryId===$_categoryChild->getId() ? $bold="style=\"font-weight:bold\"" : $bold='';
+                                    echo '&emsp;' . '<a href="' . $_categoryChildModel->getUrl() . '"' . $bold . '>' .  $_categoryChild->getName() . '</a>';   
+                                ?>
+                                <!-- temp available online notice -->
+                                <!-- <?php //if ($_categoryChild->getId()==217) : ?>
+                                    <span style="color:#333333;font-size:.875rem;display: block;margin-top: 15px;font-weight:bold;margin-left:10px;">Shop All Supplies Online!</span>
+                                <?php //endif; ?>  -->
+
+
+                                <?php if($categoryGrandchildren->count()) : ?>
+                                <ul class="menu vertical" data-submenu="" aria-hidden="true" role="menu">
+                                <?php foreach($categoryGrandchildren as $_categoryGrandchild) : ?>
+                                    <?php $_categoryGrandchildModel = Mage::getModel('catalog/category')->load($_categoryGrandchild->getId());?>
+                                   
+                                    <li class="menu-item menu-item-type-custom menu-item-object-custom">    
+
+                                      <!-- temp available online notice -->
+                                        <!-- <?php //if ($_categoryGrandchild->getId()==241 || $_categoryGrandchild->getId()==263 || $_categoryGrandchild->getId()==279 || $_categoryGrandchild->getId()==295 || $_categoryGrandchild->getId()==297) : ?>
+                                            <span style="color:#333333;font-size:.875rem;display:block;margin-top: 15px;font-weight:bold;margin-left:10px;">Shop Online!</span>
+                                        <?php //endif; ?>    -->            
+
+                                        <?php
+                                            $currentCategoryId===$_categoryChild->getId() ? $bold="style=\"font-weight:bold\"" : $bold='';
+                                            echo '&emsp;&emsp;' . '<a href="' . $_categoryGrandchildModel->getUrl() . '"' . $bold . '>' .  $_categoryGrandchild->getName() . '</a>';
+                                        ?>
+                                    
+
+                                    </li>
+
+                                <?php endforeach; ?>
+                              </ul>
+                            <?php endif; ?>
+                            </li>
+                            
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </li>
+        <?php endforeach ?>

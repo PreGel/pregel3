@@ -1,0 +1,140 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+?>
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+<?php
+    $_helper    = $this->helper('catalog/output');
+    $_category  = $this->getCurrentCategory();
+    $_imgHtml   = '';
+    if ($_imgUrl = $_category->getImageUrl()) {
+        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
+        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
+    }
+    if ($_orbitSliderId = $_category->getData('category_orbitslider')) {
+        $orbitSliderBlock = Mage::app()->getLayout()
+            ->createBlock('itactica_orbitslider/slider_widget_view')
+            ->setData('slider_id',$_orbitSliderId)
+            ->setTemplate('itactica_orbitslider/slider/widget/view.phtml')
+            ->toHtml();
+    } else {
+        $orbitSliderBlock = '';
+    }
+    if ($_logoSliderId = $_category->getData('category_logoslider')) {
+        $logoSliderBlock = Mage::app()->getLayout()
+            ->createBlock('itactica_logoslider/slider_widget_view')
+            ->setData('slider_id',$_logoSliderId)
+            ->setTemplate('itactica_logoslider/slider/widget/view.phtml')
+            ->toHtml();
+    } else {
+        $logoSliderBlock = '';
+    }
+?>
+
+<!-- get url -->
+<?php
+$_baseUrl = Mage::getBaseUrl();
+$_currentUrl = Mage::helper('core/url')->getCurrentUrl();
+$_relativeUrl = str_replace($_baseUrl, '/', $_currentUrl);
+?>
+<!--  / get url -->
+
+<?php $pageTitle = $_helper->categoryAttribute($_category, $_category->getName(), 'name'); ?>
+
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+<!-- check if viewing products available online only -->
+<?php if ($_relativeUrl=='/products/filter/allowed_to_ordermode/1.html') : ?>
+<div class="row">
+    <div class="large-12 columns">
+        <h1 class="online-intro">Welcome to PreGel America's online store!</h1>
+        <p>You are viewing products available for online purchase, <a href="/enpga/products.html">view all products instead.</a></p>
+        <p>Use the categories and filters below to narrow your search!</p>
+    </div>
+</div>
+
+<?php else: ?>
+
+<div id="top-banner-container" class="hide-for-small">
+<!-- <div class="row"> -->
+<div class="head-row">
+<?php //echo $orbitSliderBlock; ?> 
+     <div class="head-banner"></div>
+</div>
+<!-- <div id="pg-about-banner-container">
+    <div class="row">
+     <div id="pg-about-banner"></div>
+    </div> 
+   </div> -->
+<!-- </div> -->
+</div>
+
+
+
+
+<?php echo $this->getLayout()->getBlock('breadcrumbs')->toHtml(); ?>
+
+<div class="pg-featured-cat">
+        <?php echo $this->getChildHtml('featuredcategories_view'); ?>
+</div>
+
+<div class="row category-description">
+   <!--  <?php //if($_imgUrl): ?>
+    <div class="large-6 columns">
+        <?php //echo $_imgHtml ?>
+    </div>
+<?php //endif; ?> -->
+
+<?php if($_description=$_category->getDescription()): ?> 
+    <div class="large-12 columns">
+        <!--  <h3 id="category-name" class="truncate"> -->
+         <h3 id="category-name">
+            <?php echo $pageTitle ?>
+        </h3>
+        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+    </div>
+<?php endif; ?>
+</div>
+
+<div class="row back-link">
+    <!-- testing -->
+ <?php
+ $level = $this->getCurrentCategory()->getParentCategory()->getLevel();
+if($level > 3){                 
+    $name = $this->getCurrentCategory()->getParentCategory()->getParentCategory()->getName();
+    $url = $this->getCurrentCategory()->getParentCategory()->getParentCategory()->getUrl();
+    echo '<a href="'.$url.'">Wszystkie '.$name.'</a>';
+    }
+    else {
+    $name = $this->getCurrentCategory()->getParentCategory()->getName();
+    $url = $this->getCurrentCategory()->getParentCategory()->getUrl();
+    echo '<a href="'.$url.'">Wszystkie '.$name.'</a>';
+    } 
+ ?>
+<!-- end testing -->
+</div>
+<?php endif; ?>
+
+<?php if($this->isContentMode()): ?>
+    <?php echo $this->getCmsBlockHtml() ?>
+
+<?php elseif($this->isMixedMode()): ?>
+    <?php echo $this->getCmsBlockHtml() ?>
+    <?php echo $this->getProductListHtml() ?>
+
+<?php else: ?>
+        <?php echo $this->getProductListHtml() ?>
+<?php endif; ?>
+<?php echo $logoSliderBlock; ?>

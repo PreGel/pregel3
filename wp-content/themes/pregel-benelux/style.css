@@ -1,0 +1,108 @@
+
+/*
+Theme Name: PreGel Benelux
+Description: Child theme for Benelux - Parent PreGel Master
+Author: PreGel America
+Template: pregel
+*/
+/*temp custom menu styles - should be moved to master when finalized*/
+/*#top-bar-menu a {
+    font-size: 1.2rem;
+}*/
+.admin-bar #pglogo2 {
+    top:40px;
+}
+
+.top-bar {
+    padding: 3rem;
+}
+.top-bar.sticky.is-stuck {
+    padding: 0.5rem;
+}
+
+
+@media (max-width: 1024px) {
+    .top-bar {
+        padding: 0.5rem;
+    }
+}
+#menu-main-rechts-1 {
+    float: left;
+}
+#menu-main-left-1 {
+    padding-left: 9rem;
+}
+.nav-table {
+    display: table;
+}
+.nav-table-row {
+    display: table-row;
+}
+.nav-table ul li {
+    display: table-cell;
+}
+#pglogo2 {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 192px;
+    z-index: 1006;
+    background: white;
+    border: solid 2px #6ba0d3;
+    padding: 14px 30px 10px;
+    border-radius: 4px;
+ }
+ #top-bar-menu a {
+    font-size: 1.2rem;
+ }
+ /*end temp new menu */
+/* custom css */
+#lang_sel {
+	margin-top: 10px;
+	height: 30px;
+}
+
+#lang_sel ul ul {
+	top:22px;
+}
+
+.page-id-1733 #pg-about-banner {
+	background-image: url('assets/images/ABOUT_main_HeaderISO.png');
+}
+
+.page-id-1735 #pg-about-banner {
+	background-image: url('assets/images/ABOUT_main_HeaderISO.png');
+}
+
+.page-id-1735 #pg-testimonial-container {
+    background: url('http://pregel2.com/wp-content/uploads/2016/03/1_spoonful.png');
+}
+
+.page-id-1737 #pg-about-banner {
+    background-image: url('assets/images/ABOUTUS_ProductManufacturing_Header_iso.png');
+}
+
+.page-id-1739 #pg-about-banner {
+    background-image: url('assets/images/TRAINING_HeaderISO.png');
+}
+
+.page-id-1741 #pg-about-banner {
+    background-image: url('assets/images/SERVICES_CUSTOMERSUPPORT_Header_iso.png');
+}
+
+.page-id-1743 #pg-about-banner {
+    background-image: url('assets/images/SERVICES_CUSTOMERSUPPORT_HeaderISO.png');
+}
+
+.page-id-1771 #pg-about-banner {
+    background-image: url('assets/images/TRAINING_HeaderISO.png');
+}
+
+.page-id-1782 #pg-about-banner {
+    background-image: url(assets/images/ABOUTUS_AroundWorld_HeaderISO.png);
+}
+.gform_heading {
+    visibility: hidden;
+}

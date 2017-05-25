@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Issue20Flip</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<style type="text/css">
+body{
+	background:#ccc;
+}
+#magazine{
+	min-width:500px;
+	min-height:200px;
+	margin:0 auto;
+}
+#magazine .turn-page{
+	background-color:#ccc;
+	background-size:100% 100%;
+}
+</style>
+<script>
+$(document).ready(function() {
+	
+    var agnew = $(document).width();
+	var agnew2 = $(document).height();
+	
+	var agv = agnew2 / agnew;
+	
+if(agv >= 1.2) {
+	
+	alert("For the best experience, please rotate your device to a landscape orientation.");
+	
+	agnew = agnew2 * .5; 
+	
+	agnew2 = agnew2 * .35;	
+		
+	agnew = agnew + 'px';
+	agnew2 = agnew2 + 'px';
+
+		$('#magazine').height(agnew2);
+		$('#magazine').width(agnew);	
+	
+	
+} else if(agv >= .75) {
+	
+	agnew = agnew2 * .85; 
+	
+	agnew2 = agnew2 * .6;	
+		
+	agnew = agnew + 'px';
+	agnew2 = agnew2 + 'px';
+
+		$('#magazine').height(agnew2);
+		$('#magazine').width(agnew);
+	
+	
+}else{
+	
+	agnew = agnew2 * 1.4; 
+	
+	
+	agnew2 = agnew2 - 50;
+	
+
+	agnew = agnew + 'px';
+	agnew2 = agnew2 + 'px';
+
+		$('#magazine').height(agnew2);
+		$('#magazine').width(agnew);
+	}
+});
+
+
+
+</script>
+<script type="text/javascript" src="flip/turn.js"></script>
+
+
+</head>
+<body>
+
+<div id="magazine">
+	<div style="background-image:url(flip/i22/VFTT22_FINAL_Page_01.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_02.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_03.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_04.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_05.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_06.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_07.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_08.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_09.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_10.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_11.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_12.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_13.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_14.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_15.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_16.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_17.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_18.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_19.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_20.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_21.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_22.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_23.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_24.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_25.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_26.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_27.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_28.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_29.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_30.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_31.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_32.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_33.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_34.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_35.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_36.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_37.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_38.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_39.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_40.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_41.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_42.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_43.jpg);"></div>
+    <div style="background-image:url(flip/i22/VFTT22_FINAL_Page_44.jpg);"></div>
+	
+</div>
+
+
+<script type="text/javascript">
+
+	$(window).ready(function() {
+		$('#magazine').turn({
+							display: 'double',
+							acceleration: true,
+							gradients: !$.isTouch,
+							elevation:50,
+							when: {
+								turned: function(e, page) {
+									/*console.log('Current view: ', $(this).turn('view'));*/
+								}
+							}
+						});
+	});
+	
+	
+	$(window).bind('keydown', function(e){
+		
+		if (e.keyCode==37)
+			$('#magazine').turn('previous');
+		else if (e.keyCode==39)
+			$('#magazine').turn('next');
+			
+	});
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,111 @@
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   Codnitive
+ * @package    Codnitive_Sidenav
+ * @author     Hassan Barza <support@codnitive.com>
+ * @copyright  Copyright (c) 2011 CODNITIVE Co. (http://www.codnitive.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ */
+
+/* <<< Sidebar Navigation ==================================================================== */
+#sidebar-nav {
+	margin-bottom: 15px;
+}
+#sidebar-nav .block-title {
+	/*border: 0 none !important;*/
+	/*height: 18px !important;*/
+	/*background: url('../images/bkg_block-sidebarnav-title.gif') 0 0 no-repeat;*/
+	/*background:#e4e4e4;*/
+	border-bottom: 3px solid #e4e4e4;
+	padding: 2px 10px 0;
+}
+#sidebar-nav .block-title strong {
+	font: Arial, Helvetica, sans-serif;
+	font-size:12px;
+	/*text-transform: uppercase;*/
+	color: #0066a4;
+	line-height:20px;
+}
+#sidebar-nav .block-content {
+	/*background: #DEE5E8 url('../images/bkg_block-sidebarnav-actions.gif') 0 0 repeat-x;*/
+	background:#FFFFFF;
+	padding: 6px;
+	/*border: 1px solid #C4C1BC;*/
+	overflow: auto;
+}
+#sidebar-nav .block-content a {
+	color: #777777;
+}
+#sidebar-nav .block-content a:hover {
+	color: #777777;
+	background-color:#e4e4e4;
+	text-decoration:none;
+	display:block;
+}
+ul#sidebar-nav-menu > li {
+	background: url('../images/bkg_block-sidebarnav-layered-dd.gif') 0 100% repeat-x;
+	list-style: inside disc;
+	font-weight: bold;
+	padding: 8px 0;
+}
+ul#sidebar-nav-menu > li:last-child {
+	background: none;
+	margin-bottom: 5px;
+}
+/*
+ul#sidebar-nav-menu > li > ul {
+	margin-left: 5px;
+}
+*/
+ul#sidebar-nav-menu li ul {
+/*	padding-left: 10px; */
+	font-weight: normal;
+}
+ul#sidebar-nav-menu li {
+	margin-bottom:10px;
+}
+#sidebar-nav li.active,
+#sidebar-nav li.active > a,
+#sidebar-nav li.active > .collapsible-wrapper > a {
+	color: #D15E00;
+}
+#sidebar-nav .collapsible-wrapper {
+	margin-bottom: 10px;
+}
+ul#sidebar-nav-menu > li.parent > ul.ul-thumb {
+	padding-left: 10px;
+}
+#sidebar-nav li.thumb {
+	list-style-type: none;
+}
+ul#sidebar-nav-menu > li.no-thumb {
+	margin-left: 0 !important;
+	list-style-type: none;
+}
+#sidebar-nav img {
+	border: 0 none !important;
+	outline: 0 none !important;
+}
+#sidebar-nav span.product-count {
+	color: #000;
+}
+.category_name {
+}
+/* >>> Sidebar Navigation ==================================================================== */

@@ -1,0 +1,32 @@
+<!--@subject {{var quote.getStoreGroupName()}}: New Quote request # {{var quote.increment_id}} @-->
+
+<!--@styles
+body,td { color:#2f2f2f; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; }
+@-->
+<div style="font:11px/1.35em Verdana, Arial, Helvetica, sans-serif;">
+    <table cellspacing="0" cellpadding="0" border="0" width="98%"
+           style="margin-top:10px; font:11px/1.35em Verdana, Arial, Helvetica, sans-serif; margin-bottom:10px;">
+        <tr>
+            <td align="center" valign="top">
+                <!-- [ header starts here] -->
+                <table cellspacing="0" cellpadding="0" border="0" width="650">
+                    <tr>
+                        <td valign="top"><a href="{{store url=''}}"><img src="{{var logo_url}}" alt="{{var logo_alt}}" style="margin-bottom:10px; width: 200px;" border="0" width="200" /></a></td>
+                    </tr>
+                </table>
+                <!-- [ middle starts here] -->
+                <table cellspacing="0" cellpadding="0" border="0" width="650">
+                    <tr>
+                        <td valign="top">
+                            <p>
+                                <strong>Hello {{var customer.name}}</strong>,<br/><br>
+                                <p>Thank you for your recent request for more information concerning our premium ingredients. You can expect a PreGel representative to contact you within 48 hours to answer any product questions you may have.</p>
+                                <p>If you have any questions about your request, please contact us at <a href="mailto:support@pregel2.com">support@pregel2.com</a> or call us toll-free at 866-977-3435, Monday - Friday, 8am - 5pm PST. Grazie!</p>
+                            </p><br>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>               

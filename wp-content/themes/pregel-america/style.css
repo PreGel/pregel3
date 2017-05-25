@@ -1,0 +1,90 @@
+
+/*
+Theme Name: PreGel America
+Description: Child theme for America - Parent PreGel Master
+Author: PreGel America
+Template: pregel
+*/
+/*temp custom menu styles - should be moved to master when finalized*/
+/*#top-bar-menu a {
+	font-size: 1.2rem;
+}*/
+.admin-bar #pglogo2 {
+	top:40px;
+}
+
+.top-bar {
+	padding: 3rem;
+}
+.top-bar.sticky.is-stuck {
+	padding: 0.5rem;
+}
+
+
+@media (max-width: 1024px) {
+	.top-bar {
+		padding: 0.5rem;
+	}
+}
+#menu-main-left-1 {
+	padding-left: 9rem;
+}
+.nav-table {
+	display: table;
+}
+.nav-table-row {
+	display: table-row;
+}
+.nav-table ul li {
+	display: table-cell;
+}
+#pglogo2 {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 192px;
+    z-index: 1006;
+    background: white;
+    border: solid 2px #6ba0d3;
+    padding: 14px 30px 10px;
+    border-radius: 4px;
+ }
+ #top-bar-menu a {
+ 	font-size: 1.2rem;
+ }
+ /*end temp custom menu*/
+
+/* add your custom child css here */
+/*for the shop online top bar button*/
+#second-top-bar-menu .menu-item-1555 {
+	/*background-color: white;*/
+	/*padding: 2px;*/
+	border: 1px solid white;
+}
+#second-top-bar-menu .menu-item-1555 a {
+	/*color: #6ba0d3;*/
+	font-size: .8rem;
+}
+@media only screen and (max-width: 1180px) {
+	#second-top-bar-menu .menu-item-1555 a {
+	font-size: .5rem;
+}
+}
+.search-form input {
+	width: inherit;
+	display: inline-block;
+}
+#event-cat-list li {
+	display: inline-block;
+}
+#event-cat-list ul {
+	float:left;
+}
+#cat-filter {
+	background:#efefef;
+}
+#cat-filter h4 {
+	padding: 10px;
+}

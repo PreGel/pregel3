@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Issue20Flip</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<style type="text/css">
+body{
+	background:#ccc;
+}
+#magazine{
+	min-width:500px;
+	min-height:200px;
+	margin:0 auto;
+}
+#magazine .turn-page{
+	background-color:#ccc;
+	background-size:100% 100%;
+}
+</style>
+<script>
+$(document).ready(function() {
+	
+    var agnew = $(document).width();
+	var agnew2 = $(document).height();
+	
+	var agv = agnew2 / agnew;
+	
+if(agv >= 1.2) {
+	
+	alert("For the best experience, please rotate your device to a landscape orientation.");
+	
+	agnew = agnew2 * .5; 
+	
+	agnew2 = agnew2 * .35;	
+		
+	agnew = agnew + 'px';
+	agnew2 = agnew2 + 'px';
+
+		$('#magazine').height(agnew2);
+		$('#magazine').width(agnew);	
+	
+	
+} else if(agv >= .75) {
+	
+	agnew = agnew2 * .85; 
+	
+	agnew2 = agnew2 * .6;	
+		
+	agnew = agnew + 'px';
+	agnew2 = agnew2 + 'px';
+
+		$('#magazine').height(agnew2);
+		$('#magazine').width(agnew);
+	
+	
+}else{
+	
+	agnew = agnew2 * 1.4; 
+	
+	
+	agnew2 = agnew2 - 50;
+	
+
+	agnew = agnew + 'px';
+	agnew2 = agnew2 + 'px';
+
+		$('#magazine').height(agnew2);
+		$('#magazine').width(agnew);
+	}
+});
+
+
+
+</script>
+<script type="text/javascript" src="flip/turn.js"></script>
+
+
+</head>
+<body>
+
+<div id="magazine">
+	<div style="background-image:url(flip/issue20JPGs/Page1.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page2.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page3.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page4.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page5.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page6.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page7.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page8.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page9.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page10.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page11.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page12.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page13.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page14.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page15.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page16.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page17.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page18.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page19.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page20.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page21.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page22.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page23.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page24.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page25.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page26.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page27.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page28.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page29.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page30.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page31.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page32.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page33.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page34.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page35.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page36.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page37.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page38.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page39.jpg);"></div>
+    <div style="background-image:url(flip/issue20JPGs/Page40.jpg);"></div>
+	
+</div>
+
+
+<script type="text/javascript">
+
+	$(window).ready(function() {
+		$('#magazine').turn({
+							display: 'double',
+							acceleration: true,
+							gradients: !$.isTouch,
+							elevation:50,
+							when: {
+								turned: function(e, page) {
+									/*console.log('Current view: ', $(this).turn('view'));*/
+								}
+							}
+						});
+	});
+	
+	
+	$(window).bind('keydown', function(e){
+		
+		if (e.keyCode==37)
+			$('#magazine').turn('previous');
+		else if (e.keyCode==39)
+			$('#magazine').turn('next');
+			
+	});
+
+</script>
+
+</body>
+</html>
+

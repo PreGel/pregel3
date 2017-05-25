@@ -1,0 +1,213 @@
+/*
+Theme Name: PreGel Peru
+Description: Child theme for Peru - Parent PreGel Master
+Author: PreGel America
+Template: pregel
+*/
+
+/*temp custom menu styles - should be moved to master when finalized*/
+/*#top-bar-menu a {
+	font-size: 1.2rem;
+}*/
+.admin-bar #pglogo2 {
+	top:40px;
+}
+
+.top-bar {
+	padding: 3rem;
+}
+.top-bar.sticky.is-stuck {
+	padding: 0.5rem;
+}
+
+
+@media (max-width: 1024px) {
+	.top-bar {
+		padding: 0.5rem;
+	}
+}
+#menu-main-left-1 {
+	padding-left: 9rem;
+}
+.nav-table {
+	display: table;
+}
+.nav-table-row {
+	display: table-row;
+}
+.nav-table ul li {
+	display: table-cell;
+}
+#pglogo2 {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 192px;
+    z-index: 1006;
+    background: white;
+    border: solid 2px #6ba0d3;
+    padding: 14px 30px 10px;
+    border-radius: 4px;
+ }
+ #top-bar-menu a {
+ 	font-size: 1.2rem;
+ }
+ .widget_search input.search-field {
+ 	width: 70%;
+ }
+/* end temp menu */
+
+/* custom css */
+#location-links .row {
+	margin-top: 10px;
+}
+#top-bar-menu a {
+	font-size: 1.25rem;
+}
+#titlebar .widgettitle {
+	display: none;
+}
+/*#menu-item-1542 span {
+	font-size: .75rem;
+}*/
+.page-id-25 .parrallax {
+	background-image: url('assets/images/ITC-Parrallax.jpg');
+}
+#pg-about-banner {
+	background-size: auto;
+}
+#pg-about-banner-container {
+	background: url('assets/images/WhiteBackground.jpg');
+	background-repeat: repeat-x;
+	background-position: center center;
+}
+#widget_sp_image-5 .pg-caption .pg-text-overlay img {
+	width: 200px;
+	max-width: 200px;
+	min-width: 200px;
+	height: auto;
+}
+#product-bar .link {
+	position: relative;
+	height: 175px;
+}
+.footer #subsidiaries-row {
+	height: 100px; 
+}
+@media (max-width: 1200px) {
+	#product-bar .link {
+		height: 150px;
+	}
+}
+@media (max-width: 1100px) {
+	#top-bar-menu a {
+		font-size: 1rem;
+	}
+	.footer #subsidiaries-row {
+		height: 120px;
+	}
+}
+@media (max-width: 540px) {
+	#product-bar .link {
+		height: 100px;
+	}
+}
+.search-field {
+	float: left;
+	height: 36px;
+}
+.search-submit {
+	float: left;
+	height: 36px;
+}
+.pg-text-overlay img {
+	min-width: 0;
+}
+.page-template-template-about-main .parrallax {
+	background-image: url('/wp-content/themes/pregel-hungary/assets/images/PreGel-Italy.jpg');
+} 
+.page-template-template-about-main #pg-about-banner {
+	background-image: url('assets/images/ABOUT_main_HeaderISO.png');
+}
+.page-id-1545 #pg-about-banner {
+	background-image: url('assets/images/ABOUT_main_HeaderISO.png');
+}
+.page-id-1551 #pg-about-banner {
+	background-image: url('assets/images/ABOUT_main_HeaderISO.png');
+}
+.page-id-1532 #pg-about-banner {
+	background-image: url('assets/images/ABOUTUS_AroundWorld_HeaderISO.png');
+}
+.page-id-1617 #pg-about-banner {
+	background-image: url('assets/images/ABOUTUS_AroundWorld_HeaderISO.png');
+}
+.page-id-1706 #pg-about-banner {
+	background-image: url('assets/images/TRAINING_HeaderISO.png');
+}
+.page-id-1534 #pg-about-banner {
+	background-image: url('assets/images/SERVICES_CUSTOMERSUPPORT_HeaderISO.png');
+}
+.page-id-70 #pg-about-banner {
+	background-image: url('assets/images/SUBSIDIARIES_HeaderISO.png');
+}
+#pg-about-testimonial {
+	min-height: 275px;
+}
+.search-no-results #main {
+	height: 500px;
+}
+#pg-testimonial-container {
+	width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    border: #6ba0d3 solid 2px;	
+}
+.pg-circle-image  {
+	display: inline;
+	margin: 0 auto;
+	height: auto;
+	width: auto;					
+}
+.text-global {
+	font-size: 1.25em;
+	margin: .3em auto;
+}
+#bottom-footer #footer-contact-info {
+	font-weight: 700;
+}
+#bottom-footer #copyright {
+	font-weight: 700;
+	}
+#pregel-el-mundo-links {
+	margin: 1em auto;
+}
+/*Home page slider*/
+.slide-head h2 {
+	text-shadow: 0px 4px 11px rgba(0, 0, 0, 0.55);
+}
+@media only screen and (max-width: 64em){
+	.slide-head h2 {
+		font-size: 36px;
+		text-shadow: 0px 4px 11px rgba(0, 0, 0, 0.55);
+	}
+}
+ul.footer-social li {
+	padding: 0 10px;
+}
+#bottom-footer a {
+	color: #fff;
+	text-decoration: underline;
+}
+@media (max-width: 1024px) {
+	#product-bar h3 {
+	    font-size: 3rem;
+	}
+}

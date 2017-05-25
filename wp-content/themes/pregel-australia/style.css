@@ -1,0 +1,149 @@
+
+/*
+Theme Name: PreGel Australia
+Description: Child theme for Australia - Parent PreGel Master
+Author: PreGel America
+Template: pregel
+*/
+
+/* custom css */
+/*temp custom menu styles - should be moved to master when finalized*/
+/*#top-bar-menu a {
+	font-size: 1.2rem;
+}*/
+.admin-bar #pglogo2 {
+	top:40px;
+}
+
+.top-bar {
+	padding: 3rem;
+}
+.top-bar.sticky.is-stuck {
+	padding: 0.5rem;
+}
+
+
+@media (max-width: 1024px) {
+	.top-bar {
+		padding: 0.5rem;
+	}
+}
+#menu-main-left-1 {
+	padding-left: 9rem;
+}
+.nav-table {
+	display: table;
+}
+.nav-table-row {
+	display: table-row;
+}
+.nav-table ul li {
+	display: table-cell;
+}
+#pglogo2 {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 192px;
+    z-index: 1006;
+    background: white;
+    border: solid 2px #6ba0d3;
+    padding: 14px 30px 10px;
+    border-radius: 4px;
+ }
+ #top-bar-menu a {
+ 	font-size: 1.2rem;
+ }
+ /*end temp new menu */
+
+
+@media (max-width: 1215px) {
+	.form-search .input-text {
+	    width: 100%; 
+	}
+}
+.page-id-20 #pg-about-banner {
+    background-image: url(assets/images/ABOUT_main_HeaderISO.png);
+}
+.page-id-37 #pg-about-banner {
+    background-image: url(assets/images/ABOUT_main_HeaderISO.png);
+}
+.page-id-55 #pg-about-banner {
+    background-image: url(assets/images/ABOUT_main_HeaderISO.png);
+}
+.page-id-62 #pg-about-banner-container {
+	display: none;
+	#pg-about-banner {
+		display: none;
+	}
+}
+.page-id-123 #pg-about-banner-container {
+	display: none;
+	#pg-about-banner {
+		display: none;
+	}
+}
+.page-id-123 #pg-about-section-three {
+	background-color: white;
+}
+.page-id-123 .parrallax {
+	display: none;
+}
+
+.page-id-126 #pg-about-section-three {
+	background-color: #fefefe;
+}
+.page-id-126 #pg-about-section-four {
+	background-color: #deeaf7;
+}
+.page-id-405 .parrallax {
+	background-image: url("/wp-content/themes/pregel-australia/assets/images/australia1.jpg")
+}
+.page-id-617 #pg-about-banner-container {
+	display: none;
+}
+.page-id-619 #pg-about-banner-container {
+	display: none;
+}
+.page-id-2020 #pg-about-banner {
+    background-image: url(assets/images/ABOUT_main_HeaderISO.png);
+}
+.page-id-2022 #pg-about-banner-container {
+	display: none;
+}
+.page-id-2022 .parrallax {
+	background-image: url(assets/images/gelato-trays.jpg);
+}
+.page-id-2056 #pg-about-banner-container {
+    display: none;
+}
+.page-id-2056 .parrallax {
+	background-image: url(assets/images/gelato-trays.jpg);
+}
+.page-id-2076 #pg-about-banner-container {
+    display: none;
+}
+.page-id-2076 .parrallax {
+	
+}
+.mxyt-title h1 {
+	color: white;
+}
+#aus-pms-icons {
+	height: 150px;
+}
+.has-tip {
+	border-bottom: none;
+}
+@media (max-width: 750px) {
+	.page-id-2067 #pg-about-section-banner-video {
+		height: 600px !important;
+	}
+}
+@media (max-width: 600px) {
+	#aus-pms-icons {
+		
+	}
+}

@@ -1,0 +1,79 @@
+<?php
+/**
+ * Intenso Premium Theme
+ *
+ * @category    design
+ * @package     intenso_default
+ * @copyright   Copyright (c) 2014-2016 Itactica (http://www.itactica.com)
+ * @license     http://getintenso.com/license
+ */
+
+/**
+ * Product media data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ */
+?>
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+    $_category  = Mage::getModel('catalog/layer')->getCurrentCategory();
+    $_galleryImages = $this->getGalleryImages();
+    $width = 500;
+    list($maxHeight,$resizeAsSquare,$baseImageSize) = $this->helper('itactica_intenso/data')->getGalleryImagesHeight($_galleryImages, $_product, $width);
+?>
+ <!-- - move the column wrap to view file so that we can position related products slider under product images-->
+<!-- <div class="small-12 medium-4 product-img-box hide-for-small-only columns" aria-live="polite" aria-busy="false"> -->
+<div id="pg-prod-img-box">
+    <figure>
+         <?php if (($_category->getId()==212 || $_category->getId()==238 || $_category->getId()==239 || $_category->getId()==234 || $_category->getId()==235 || $_category->getId()==236) && $_product->getMainImgGelatoCat() && ($_product->getMainImgGelatoCat() != 'no_selection')): ?> <!-- get the gelato main image -->
+        <div class="product-label-placeholder" data-productid="<?php echo $_product->getId(); ?>" data-labelurl="<?php echo Mage::getUrl('',array('_secure'=>true)); ?>itactica-productlabel"></div>
+        <a class="lightbox product-image" id="gallery-image" href="<?php echo $this->helper('catalog/image')->init($_product, 'main_img_gelato_cat')->resize($baseImageSize); ?>">
+            <?php
+                $_img = '<img itemprop="image" src="'.$this->helper('catalog/image')->init($_product, 'main_img_gelato_cat')->resize($width,$maxHeight).'" alt="'.$this->escapeHtml($this->getImageLabel()).'" width="' . $width . '" height="' . $maxHeight . '" >';
+                echo $_helper->productAttribute($_product, $_img, 'main_img_gelato_cat');
+            ?>
+        </a>
+        <?php elseif (($_category->getId()==214 || $_category->getId()==260 || $_category->getId()==261) && $_product->getMainImgSsCat() && ($_product->getMainImgSsCat() != 'no_selection')): ?> <!-- get the soft serve mainimage -->
+        <div class="product-label-placeholder" data-productid="<?php echo $_product->getId(); ?>" data-labelurl="<?php echo Mage::getUrl('',array('_secure'=>true)); ?>itactica-productlabel"></div>
+        <a class="lightbox product-image" id="gallery-image" href="<?php echo $this->helper('catalog/image')->init($_product, 'main_img_ss_cat')->resize($baseImageSize); ?>">
+            <?php
+                $_img = '<img itemprop="image" src="'.$this->helper('catalog/image')->init($_product, 'main_img_ss_cat')->resize($width,$maxHeight).'" alt="'.$this->escapeHtml($this->getImageLabel()).'" width="' . $width . '" height="' . $maxHeight . '" >';
+                echo $_helper->productAttribute($_product, $_img, 'main_img_ss_cat');
+            ?>
+        </a>
+        <?php else: ?> <!-- get the main image -->
+        <div class="product-label-placeholder" data-productid="<?php echo $_product->getId(); ?>" data-labelurl="<?php echo Mage::getUrl('',array('_secure'=>true)); ?>itactica-productlabel"></div>
+        <a class="lightbox product-image" id="gallery-image" href="<?php echo $this->helper('catalog/image')->init($_product, 'image')->resize($baseImageSize); ?>">
+            <?php
+                $_img = '<img itemprop="image" src="'.$this->helper('catalog/image')->init($_product, 'image')->resize($width,$maxHeight).'" alt="'.$this->escapeHtml($this->getImageLabel()).'" width="' . $width . '" height="' . $maxHeight . '" >';
+                echo $_helper->productAttribute($_product, $_img, 'image');
+            ?>
+        </a>
+        <?php endif; ?>
+
+
+    </figure>
+    <?php if (count($_galleryImages) > 1): ?>
+   <!--  <?php //if ($this->helper('itactica_intenso')->showGalleryImagesAsSlider()): ?>
+    <section class="featured-slider featured-slider-section" data-options="animation_speed:300; min_item_width:74; fixed_width: true; swipe:1">
+    <?php //endif; ?> -->
+        <ol class="more-views clearfix">
+        <?php $i=1; foreach ($_galleryImages as $_image): ?>
+            <?php if ($this->isGalleryImageVisible($_image)): ?>
+            <li<?php if ($i==1): ?> class="item selected"<?php else: ?> class="item"<?php endif; ?>>
+                <a class="lightbox" role="button" href="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($resizeAsSquare[$i]); ?>" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>" data-url-medium="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->resize($width,$maxHeight); ?>">
+                    <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(100); ?>" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" width="100" height="100">
+                    <span class="a11y"><?php echo $this->__('Display Gallery Item %d', $i) ?></span>
+                </a>
+            </li>
+            <?php endif; ?>
+        <?php $i++; endforeach; ?>
+        </ol>
+    <!-- <?php //if ($this->helper('itactica_intenso')->showGalleryImagesAsSlider()): ?> -->
+    <!-- </section> -->
+   <!--  <?php //endif; ?> -->
+    <?php endif; ?>
+</div>
+<!-- </div> -->
+<?php echo $this->getChildHtml('after'); ?>
